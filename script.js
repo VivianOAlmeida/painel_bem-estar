@@ -32,3 +32,29 @@ const frasesPorHumor = {
         "Cuide de si mesmo, mesmo nos dias comuns."
     ]
 };
+// Variável global para armazenar o humor atual
+let humorAtual = "neutro";
+
+// ---- Registrar humor ----
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Pega o humor digitado e transforma em minúsculas
+    const humor = humorInput.value.trim().toLowerCase();
+
+    // Mostra na tela o humor registrado
+    humorRegistrado.textContent = "Hoje você se sente: " + humor;
+
+    // Verifica se o humor digitado existe na lista
+    if (frasesPorHumor[humor]) {
+        humorAtual = humor;
+    } else {
+        humorAtual = "neutro"; // Caso não exista, usa neutro
+    }
+
+    // Salva no Local Storage
+    localStorage.setItem("humor", humorAtual);
+
+    // Limpa o campo de entrada
+    humorInput.value = "";
+});
