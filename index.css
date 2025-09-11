@@ -15,3 +15,21 @@ h1 {
     color: #333;
     margin-bottom: 20px;
 }
+
+input, button {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    border: 1px solid #999;
+    font-size: 16px;
+}
+
+button {
+    background-color: #009999;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #007777;
+}
