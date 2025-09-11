@@ -58,3 +58,19 @@ form.addEventListener("submit", function(event) {
     // Limpa o campo de entrada
     humorInput.value = "";
 });
+
+// ---- Mostrar humor salvo ao abrir a página ----
+window.addEventListener("load", function() {
+    const humorSalvo = localStorage.getItem("humor");
+    if (humorSalvo) {
+        humorAtual = humorSalvo;
+        humorRegistrado.textContent = "Hoje você se sente: " + humorSalvo;
+    }
+});
+
+// ---- Sortear mensagem motivacional relacionada ao humor ----
+mensagemBtn.addEventListener("click", function() {
+    const frases = frasesPorHumor[humorAtual];
+    const indice = Math.floor(Math.random() * frases.length);
+    mensagemMotivacional.textContent = frases[indice];
+});
