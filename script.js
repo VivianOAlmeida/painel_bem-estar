@@ -3,6 +3,7 @@ const humorInput = document.getElementById("humor");
 const humorRegistrado = document.getElementById("humor-registrado");
 const mensagemBtn = document.getElementById("mensagem-btn");
 const mensagemMotivacional = document.getElementById("mensagem-motivacional");
+const imagemHumor = document.getElementById("imagem-humor"); // Elemento de imagem
 
 
 const frasesPorHumor = {
@@ -67,6 +68,29 @@ const frasesPorHumor = {
         "Cada momento é uma chance de encontrar propósito, mesmo no silêncio."
     ]
 };
+
+// Função para alterar a imagem com base no humor
+function definirImagemHumor(humor) {
+    switch (humor) {
+        case "feliz":
+            imagemHumor.src = "img/psg1.jpg"; // Caminho da imagem de "feliz"
+            break;
+        case "triste":
+            imagemHumor.src = "img/psg2.png"; // Caminho da imagem de "triste"
+            break;
+        case "ansioso":
+            imagemHumor.src = "img/psg3.png"; // Caminho da imagem de "ansioso"
+            break;
+        case "raivoso":
+            imagemHumor.src = "img/psg4.jpg"; // Caminho da imagem de "raivoso"
+            break;
+        case "neutro":
+            imagemHumor.src = "img/psg5.jpg"; // Caminho da imagem de "neutro"
+            break;
+    }
+}
+
+
 // Variável global para armazenar o humor atual
 let humorAtual = "neutro";
 
@@ -87,6 +111,9 @@ form.addEventListener("submit", function(event) {
         humorAtual = "neutro"; // Caso não exista, usa neutro
     }
 
+    // Atualiza a imagem com base no humor
+    definirImagemHumor(humorAtual);
+
     // Salva no Local Storage
     localStorage.setItem("humor", humorAtual);
 
@@ -100,6 +127,9 @@ window.addEventListener("load", function() {
     if (humorSalvo) {
         humorAtual = humorSalvo;
         humorRegistrado.textContent = "Hoje você se sente: " + humorSalvo;
+
+        // Atualiza a imagem com base no humor salvo
+        definirImagemHumor(humorSalvo);
     }
 });
 
