@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Painel do Bem-Estar</title>
-    <link rel="stylesheet" href="index.css">
+    <meta charset="utf-8">
+    <title>Girassóis Amarelos</title>
+    <link rel="stylesheet" href="painel_humor.css">
 </head>
 <body>
-    <h1>Painel do Bem-Estar</h1>
+    <h1>Girassóis Amarelos:</h1>
+    <h2>Painel do Bem-Estar</h2>
 
-    <p class="mensagem-fixa">Cuidar de si é um ato de coragem!!!</p>
+    <p class="mensagem-fixa">“É preciso que eu suporte duas ou três larvas se quiser conhecer as borboletas.”</p>
+    <p class="mensagem-fixa">- O Pequeno Príncipe</p>
 
     <form id="humor-form">
         <label for="humor">Como você está se sentindo hoje?</label><br>
-        <input type="text" id="humor" placeholder="Ex: Feliz, Ansioso, Tranquilo">
+        <input type="text" id="humor" placeholder="Ex: Feliz, Ansioso, Triste, Deprimido, Pensat">
         <button type="submit">Registrar Humor</button>
     </form>
 
     <p id="humor-registrado"></p>
 
     <button id="mensagem-btn">Receber mensagem motivacional</button>
-    
     <p id="mensagem-motivacional"></p>
-    <img src="" alt="" id="imagem-humor">
 
-    <script src="script.js"></script>
+    <!-- Botão de ajuda, visível apenas em humores negativos -->
+    <a href="questionario_humor.html"><button id="ajuda-btn" style="display: none; margin-top: 15px;">Precisa de ajuda?</button></a>
+
+    <footer id="barra_navegacao"></footer>
+        <div class="navbar">
+            <nav id="menu">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="painel_humor.html">Painel de humor</a></li>
+                    <li><a href="hobbies.html">Hobbies</a></li>
+                    <li><a href="artigos.html">Artigos</a></li>
+                    <li><a href="configuracoes.html">Configurações</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="painel_humor.js"></script>
 </body>
 </html>
