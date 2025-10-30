@@ -1,39 +1,82 @@
+/* Estilo geral da página */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #702c8b;
-    text-align: center;
-    padding: 20px;
+    font-family: Arial, sans-serif; /* Fonte limpa e legível */
+    background-color: #fdf3c7; /* Fundo suave (amarelo claro) */
+    text-align: center; /* Centraliza o conteúdo */
+    padding: 23px;
 }
 
+body::before {
+    content: "";
+    position: fixed; /* <-- fixa no fundo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('./img/Girassol.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+    z-index: -1;
+}
+  
+/* Título principal */
 h1 {
-    color: #34043e;
+    color: #5e3c11;
+    text-shadow: 1px 6px 10px rgb(255, 251, 0);
 }
 
+h2 {
+    color: #5e3c11;
+    text-shadow: 1px 6px 10px rgb(255, 251, 0);
+}
+
+/* Mensagem inicial de incentivo */
 .mensagem-fixa {
     font-size: 18px;
     font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 20px;
+    color: #000000;
+    margin-bottom: 17px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 1px 6px 10px rgb(255, 251, 0);
 }
 
+/* Caixa de entrada e botões */
 input, button {
-    padding: 10px;
-    margin: 10px;
-    border-radius: 8px;
-    border: 1px solid #1100ff;
+    padding: 13px;
+    margin: 15px;
+    border-radius: 8px; /* Bordas arredondadas */
+    border: 3px solid #070588;
     font-size: 16px;
 }
 
+/* Botões com cor e efeito */
 button {
-    background-color: #c903f5;
-    color: rgb(0, 0, 0);
+    background-color: #9cabf1;
+    color: #000000;
+    padding: 4px;
     cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: none;
+    border: 3px solid #070588;
+    margin: 13px;
+    padding: 11px;
 }
 
 button:hover {
-    background-color: #007777;
+    background-color: #0d17a3;
+    color: white;
+    font-size: 13px;
+
 }
 
-img{
-    max-width: 400px
+label {
+    font-weight: bold;
 }
+
+body {
+    border: 20px solid #ffc710; /* espessura, tipo e cor da borda */
+    padding: 100px; /* garante que o conteúdo não encoste na borda */
+  }
