@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>Girassóis Amarelos</title>
     <link rel="stylesheet" href="index.css">
-    <script src="script.js"></script>
 </head>
 <body>
     <h1>Girassóis Amarelos:</h1>
@@ -15,7 +14,7 @@
 
     <form id="humor-form">
         <label for="humor">Como você está se sentindo hoje?</label><br>
-        <input type="text" id="humor" placeholder="Ex: Feliz, Ansioso, Triste, Deprimido, Pensat">
+        <input type="text" id="humor" placeholder="Ex: Feliz, Ansioso, Triste, Deprimido, Pensativo">
         <button type="submit">Registrar Humor</button>
     </form>
 
@@ -23,8 +22,12 @@
 
     <button id="mensagem-btn">Receber mensagem motivacional</button>
     <p id="mensagem-motivacional"></p>
+    <img id="imagem-humor" src="img/psg5.jpg" alt="Imagem do humor" style="width:300px; margin-top:20px;">
 
     <!-- Botão de ajuda, visível apenas em humores negativos -->
     <a href="questionario_humor.html"><button id="ajuda-btn" style="display: none; margin-top: 15px;">Precisa de ajuda?</button></a>
+
+    
+    <script src="script.js"></script>
 </body>
 </html>
