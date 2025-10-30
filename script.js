@@ -1,3 +1,4 @@
+const ajudaBtn = document.getElementById("ajuda-btn");
 const form = document.getElementById("humor-form");
 const humorInput = document.getElementById("humor");
 const humorRegistrado = document.getElementById("humor-registrado");
@@ -30,6 +31,18 @@ const frasesPorHumor = {
         "O tempo cura, e a sua força te leva adiante.",
         "A dor que você sente hoje é a força que você terá amanhã.",
         "Seja gentil consigo mesmo. Você está fazendo o melhor que pode."
+    ],
+    deprimido: [
+            "Dias difíceis também passam. Você é mais forte do que imagina.",
+            "Permita-se sentir, mas nunca se esqueça de que você vai superar isso.",
+            "A tristeza faz parte da caminhada, mas não define quem você é.",
+            "Cada amanhecer traz uma nova chance de recomeçar.",
+            "Respire fundo. Um passo de cada vez já é progresso.",
+            "Você não está sozinho. Tudo bem não estar bem o tempo todo.",
+            "Mesmo nas noites mais escuras, as estrelas continuam brilhando.",
+            "O tempo cura, e a sua força te leva adiante.",
+            "A dor que você sente hoje é a força que você terá amanhã.",
+            "Seja gentil consigo mesmo. Você está fazendo o melhor que pode."
     ],
     ansioso: [
         "Respire fundo. Você está no controle, mesmo que não pareça agora.",
@@ -97,29 +110,24 @@ let humorAtual = "neutro";
 // ---- Registrar humor ----
 form.addEventListener("submit", function(event) {
     event.preventDefault();
-
-    // Pega o humor digitado e transforma em minúsculas
     const humor = humorInput.value.trim().toLowerCase();
-
-    // Mostra na tela o humor registrado
     humorRegistrado.textContent = "Hoje você se sente: " + humor;
 
-    // Verifica se o humor digitado existe na lista
     if (frasesPorHumor[humor]) {
         humorAtual = humor;
     } else {
-        humorAtual = "neutro"; // Caso não exista, usa neutro
+        humorAtual = "neutro";
     }
 
-    // Atualiza a imagem com base no humor
     definirImagemHumor(humorAtual);
-
-    // Salva no Local Storage
     localStorage.setItem("humor", humorAtual);
-
-    // Limpa o campo de entrada
     humorInput.value = "";
+
+    const negativos = ["triste", "ansioso", "deprimido", "pensativo"];
+    const ehNegativo = negativos.some(palavra => humor.includes(palavra));
+    ajudaBtn.style.display = ehNegativo ? "inline-block" : "none";
 });
+
 
 // ---- Mostrar humor salvo ao abrir a página ----
 window.addEventListener("load", function() {
